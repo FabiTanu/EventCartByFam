@@ -61,11 +61,33 @@ $row = mysqli_fetch_assoc($result);
                     <div class="mb-3">
                         <label class="form-label">Select Photo Category</label>
                         <select class="form-select" name="Pages" value="<?php echo $row['category'] ?>">
-                            <option value="Wedding">Wedding</option>
-                            <option value="Birthday">Birthday</option>
-                            <option value="Corporate">Corporate</option>
-                            <option value="Others">Others</option>
+                           
+                            <?php
+                            if ($row['category'] == 0) {
+                                echo "<option value='0' selected >Wedding</option>
+                                <option value='1'>Birthday</option>
+                                <option value='2'>Corporate</option>
+                                <option value='3'>Others</option>";
+                            } elseif ($row['category'] == 1) {
+                                echo "<option value='0'>Wedding</option>
+                                <option value='1' selected>Birthday</option>
+                                <option value='2'>Corporate</option>
+                                <option value='3'>Others</option>";
+                            } elseif ($row['category'] == 2) {
+                                echo "<option value='0'>Wedding</option>
+                                <option value='1'>Birthday</option>
+                                <option value='2' selected>Corporate</option>
+                                <option value='3'>Others</option>";
+                            } else {
+                                echo "<option value='0'>Wedding</option>
+                                <option value='1'>Birthday</option>
+                                <option value='2'>Corporate</option>
+                                <option value='3' selected>Others</option>";
+                            }
+                            ?>
                         </select>
+
+
                     </div>
                     <button name="update" value="update"
                         class="bg-danger fs-4 fw-bold my-3 form-control text-white">Update</button>

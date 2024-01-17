@@ -94,7 +94,18 @@ $result = mysqli_query($connection, $insert);
                                                     <!-- <?php echo $row['image'] ?> -->
                                                 </td>
                                                 <td>
-                                                    <?php echo $row['category'] ?>
+                                                    <?php
+                                                    if ($row['category'] == 0) {
+                                                        echo "Wedding";
+                                                    } elseif ($row['category'] == 1) {
+                                                        echo "Birthday";
+                                                    } elseif ($row['category'] == 2) {
+                                                        echo "Corporate";
+                                                    } else {
+                                                        echo "others";
+                                                    }
+                                                    ?>
+                                                    <!-- <?php echo $row['category'] ?> -->
                                                 </td>
 
 

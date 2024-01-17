@@ -4,7 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Poppins:wght@100;200;300&display=swap"
+        rel="stylesheet">
+
+    <title>Wedding</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -13,6 +21,7 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="css/pagnav.css">
 
     <style>
         .blog-card {
@@ -30,146 +39,70 @@
             border-top-right-radius: 50px;
         }
     </style>
-
 </head>
 
 <body>
+
     <!--navbar-->
-    <?php
-    include "connection/nav.php";
-    ?>
 
-
-
-    <!-- intro -->
-    <section class="section intro" aria-label="home">
-        <div class="container">
-
-            <div class="intro-content">
-
-                <h1 class="h1 intro-title">
-                    CAPTURE HAPPY MOMENTS WITH US
-                    <span class="span">EVENT <br> PLANNER</span>
-                </h1>
-
-                <p class="section-text">
-                    Your special day is one of the most singificant milestones in your life, and we understand the
-                    importance of making it cetraordinary. Our mission is to alleviate the stress of plannung, allowing
-                    you to savor every moment of your special day.
-                </p>
-
-                <a href="user/login.php" class="btn">
-                    <span class="span">Join Now</span>
-                </a>
-
-            </div>
-
-            <div class="wrapper">
-                <div class="intro-banner-1 img-holder" style="--width: 400; --height: 550;">
-                    <img src="image/bi.jpg" width="400" height="550" alt="view of assortment of decor for interior shop"
-                        class="img-cover">
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="#">EventCart</a></div>
+            <div class="nav-links">
+                <div class="sidebar-logo">
+                    <span class="logo-name">EventCart</span>
+                    <i class='bx bx-x'></i>
                 </div>
+                <ul class="links" id="linkscall">
+                    <li><a href="HomePage.php">HOME</a></li>
+                    <li>
+                        <a href="#">About</a>
+                        <i class='bx bxs-chevron-down htmlcss-arrow arrow '></i>
+                        <ul class="htmlCss-sub-menu sub-menu">
+                            <li><a href="about.php">About Us</a></li>
+                            <li><a href="OurTeam.php">Preferred Partners</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                        <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                        <ul class="js-sub-menu sub-menu">
+                            <li><a href="wedding.php">Weeding</a></li>
+                            <li><a href="#">Corporate Events</a></li>
+                            <li><a href="birthday.php">Birthday</a></li>
+                            <li><a href="#">Social Activities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.php">Gallery</a></li>
+                    <li><a href="review.php">Review</a></li>
+                    <li>
+                        <a href="#">Services</a>
+                        <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                        <ul class="js-sub-menu sub-menu">
+                            <li><a href="wedding.php">Weeding</a></li>
+                            <li><a href="#">Corporate Events</a></li>
+                            <li><a href="birthday.php">Birthday</a></li>
+                            <li><a href="#">Social Activities</a></li>
+                        </ul>
+                    </li>
 
-                <div class="intro-banner-2 img-holder" style="--width: 500; --height: 850;">
-                    <img src="image/wi.jpg" width="500" height="850" alt="ceramic craft ware" class="img-cover">
+                </ul>
+            </div>
+
+            <!-- <div class="logout" id="logout">
+                <a href="#">Logout</a>
+            </div> -->
+
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Search...">
                 </div>
-
             </div>
-
         </div>
-    </section>
-
-    <!-- About -->
-
-
-    <section class="section about" aria-label="about">
-        <div class="container">
-            <div class="wrapper">
-                <figure class="about-banner about-banner-1 img-holder">
-                    <img src="image/cpi.jpg" alt="picture coming soon" class="img-cover">
-                </figure>
-                <h2 class="h2 section-title">Make easy you event</h2>
-            </div>
-            <figure class="about-banner about-banner-2 img-holder">
-                <img src="image/bi.webp" alt="picture coming soon" class="img-cover">
-            </figure>
-            <div class="about-content">
-
-                <h3 class="h2 section-title">Event planning is Our Passion</h3>
-
-                <p class="section-text">
-                    Simplifies planning for weddings, birthdays, corporate, and parties.
-                </p>
-
-                <a href="#" class="btn">
-                    <span class="span">Read More</span>
-                </a>
-
-                <figure class="about-banner about-banner-3 img-holder">
-                    <img src="image/vi.jpg" alt="picture coming soon" class="img-cover">
-                </figure>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- collection -->
-
-    <section class="section collection text-center" aria-labelledby="collection-label">
-        <div class="container-fluid">
-
-            <h2 class="h2 section-title" id="collection-label">
-                Event Collection
-            </h2>
-            <br>
-            <ul class="grid-list">
-
-                <li>
-                    <div class="collection-card">
-                        <figure class="card-banner img-holder">
-                            <img src="image/bi2.jpg" alt="Birthday picture" class="img-cover">
-                        </figure>
-                        <div class="card-content">
-                            <h3 class="h3 card-title">Birthday</h3>
-                            <a href="#" class="btn">
-                                <span class="span">View Gallery</span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collection-card">
-                        <figure class="card-banner img-holder">
-                            <img src="image/cpi2.jpg" alt="Corporate picture" class="img-cover">
-                        </figure>
-                        <div class="card-content">
-                            <h3 class="h3 card-title">Corporate</h3>
-                            <a href="#" class="btn">
-                                <span class="span">View Gallery</span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="collection-card">
-                        <figure class="card-banner img-holder">
-                            <img src="image/wi3.jpg" width="500" height="550" loading="lazy" alt="Wedding picture"
-                                class="img-cover">
-                        </figure>
-                        <div class="card-content">
-                            <h3 class="h3 card-title">Wedding</h3>
-                            <a href="#" class="btn">
-                                <span class="span">View Gallery</span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
+    </nav>
 
     <!-- 
         - #BLOG
@@ -186,24 +119,32 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin molestie ligula dignissim.
                     </p>
 
-
                     <ul class="grid-list">
+
+
                         <?php
                         include "connection/config.php";
 
                         /* Calculate Offset Code */
                         $limit = 4;
+                        if (isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        } else {
+                            $page = 1;
+                        }
+                        $offset = ($page - 1) * $limit;
 
+                        // $sql = "SELECT post.post_id, post.title, post.description,post.post_date,post.author,
+                        // category.category_name,user.username,post.category,post.post_img FROM post
+                        // LEFT JOIN category ON post.category = category.category_id
+                        // LEFT JOIN user ON post.author = user.user_id
+                        // ORDER BY post.post_id DESC LIMIT {$offset},{$limit}";
                         $sql = "SELECT `id`, `title`, `description`, `image`, `location`, 
-                                                    `status`, `event_date`, `event_type`, `date_created` FROM `review`
-                                                    ORDER BY id DESC LIMIT {$limit}";
+                        `status`, `event_date`, `event_type`, `date_created` FROM `review`
+                         ORDER BY id DESC LIMIT {$offset},{$limit}";
 
-                        // $sql = "SELECT post.post_id, post.title, post.post_date,
-                        //     category.category_name,post.category,post.post_img FROM post
-                        //     LEFT JOIN category ON post.category = category.category_id
-                        //     ORDER BY post.post_id DESC LIMIT {$limit}";
-                        
-                        $result = mysqli_query($connection, $sql) or die("Query Failed. : Recent Post");
+
+                        $result = mysqli_query($connection, $sql) or die("Query Failed.");
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
@@ -211,8 +152,9 @@
                                     <div class="blog-card">
 
 
+
                                         <figure class="card-banner img-holder">
-                                            <img src="admin-panel/<?php echo $row['image']; ?>" width="1024" height="668"
+                                            <img src="admin-panel/<?php echo $row['image']; ?>" width="600" height="500"
                                                 loading="lazy"
                                                 alt="The Detail Process Of Decorating The Clay Vase At Pottery Studio"
                                                 class="img-cover">
@@ -251,27 +193,127 @@
                                                     </span>
                                                 </a>
 
+
+
                                             </div>
+                                            <h3 class="">
+                                                <a href="single.php?id=<?php echo $row['id']; ?>" class="card-title">
+                                                    <!-- <?php echo $row['description']; ?> -->
+                                                    <?php echo substr($row['description'], 0, 130) . "....."; ?>
+                                                </a>
+                                            </h3>
+
+                                            <a href="single.php?id=<?php echo $row['id']; ?>" class="btn">
+                                                <span class="span">Read More</span>
+
+                                                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                                            </a>
 
                                         </div>
 
                                     </div>
                                 </li>
+
                             <?php }
                         } ?>
 
                     </ul>
 
-                    <a href="blog_post.php" class="btn">
+
+                    <!-- <a href="#" class="btn">
                         <span class="span">Read More</span>
 
                         <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                    </a>
+                    </a> -->
 
                 </div>
             </section>
         </div>
     </div>
+
+    <div class="pagnav">
+        <?php
+        // show pagination
+        $sql1 = "SELECT * FROM `review` ";
+        $result1 = mysqli_query($connection, $sql1) or die("Query Failed.");
+
+        if (mysqli_num_rows($result1) > 0) {
+
+            $total_records = mysqli_num_rows($result1);
+
+            $total_page = ceil($total_records / $limit);
+
+            echo ' <ul class="pagination modal-4">';
+            if ($page > 1) {
+                echo '<li><a href="blog_post.php?page=' . ($page - 1) . '" class="prev">
+            <i class="fa fa-chevron-left"></i>
+            Previous
+        </a>
+    </li>';
+                // echo '<li><a href="blog_post.php?page=' . ($page - 1) . '">Prev</a></li>';
+            }
+            for ($i = 1; $i <= $total_page; $i++) {
+                if ($i == $page) {
+                    $active = "active";
+                } else {
+                    $active = "";
+                }
+
+                // echo' <li> <a href="#" class="active">5</a></li>';
+                echo '<li class="' . $active . '"><a href="blog_post.php?page=' . $i . '">' . $i . '</a></li>';
+            }
+            if ($total_page > $page) {
+
+                echo '<li><a href="blog_post.php?page=' . ($page + 1) . '" class="next"> Next
+            <i class="fa fa-chevron-right"></i>
+        </a></li>';
+                // echo '<li><a href="index.php?page=' . ($page + 1) . '">Next</a></li>';
+            }
+
+            echo '</ul>';
+        }
+        ?>
+    </div>
+
+
+    <!-- <div class="pagnav">
+        <ul class="pagination modal-4">
+            <li><a href="#" class="prev">
+                    <i class="fa fa-chevron-left"></i>
+                    Previous
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li> <a href="#">2</a></li>
+            <li> <a href="#">3</a></li>
+            <li> <a href="#">4</a></li>
+            <li> <a href="#" class="active">5</a></li>
+            <li> <a href="#">6</a></li>
+            <li> <a href="#">7</a></li>
+            <li><a href="#" class="next"> Next
+                    <i class="fa fa-chevron-right"></i>
+                </a></li>
+        </ul><br>
+    </div> -->
+    <!-- <div id="pagnav">
+       
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <span class="page-link">Previous</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+                <span class="page-link">2</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+      
+    </div> -->
+
+
     <!--  #FOOTER-->
     <!-- <section class="footSection container-fluid"> -->
     <footer class="footer ">
@@ -376,7 +418,7 @@
                         We’d love to hear from you
                     </p>
 
-                    <a href="contact.php" class="btn-foot">
+                    <a href="#" class="btn">
                         <span class="span">Contact Us</span>
 
                         <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
@@ -396,26 +438,20 @@
 
         </div>
     </footer>
-    <!-- </section> -->
+
+
+    <script src="script.js"></script>
 
 
     <!-- 
     - ionicon link
-  -->
+    -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
     <!-- Make sure to include Bootstrap JS at the end of the body -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-    <script src="script.js"></script>
-
-
-
-
 </body>
 
 </html>
