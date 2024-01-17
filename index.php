@@ -32,7 +32,7 @@
             <a href="#">About</a>
             <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
             <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="about.php">About Us</a></li>
+              <li><a href="package/section/about.php">About Us</a></li>
               <li><a href="package/section/partners.php">Preferred Partners</a></li>
             </ul>
           </li>

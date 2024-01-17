@@ -1,0 +1,306 @@
+* {
+    margin: rem;
+}
+
+
+body {
+    font-family: 'Merriweather', serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.fline {
+    background-image: url('./image1/webg2.jpeg');
+    margin: 2rem;
+    height: 45rem;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    border-radius: 16px;
+    color: #fff;
+
+
+}
+
+.intro {
+    border-radius: 16px;
+    height: 45rem;
+    background-color: rgba(0, 0, 0, 0.467);
+
+
+}
+
+.fline h1 {
+    font-size: 5rem;
+    font-family: 'Merriweather', serif;
+    padding-top: 15rem;
+}
+
+.fline h3 {
+    font-size: 2rem;
+    font-family: 'Merriweather', serif;
+
+}
+
+
+
+
+.about {
+    height: 28rem;
+    /* background-image: linear-gradient(to right, rgba(238, 194, 131, 0), rgba(72, 48, 7, 0.523)); */
+    background-color: rgba(216, 197, 197, 0.222);
+    border-radius: 1rem;
+    padding: 1rem;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    display: flex;
+    /* justify-content:space-around; */
+    gap: 25rem;
+
+    /* flex-wrap: wrap; */
+}
+
+.about img {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 1rem;
+
+
+}
+
+.about .imgg {
+    position: relative;
+
+}
+
+.fimg {
+    left: 5rem;
+}
+
+.simg {
+    top: -10rem;
+    left: 17rem;
+}
+
+.timg {
+    top: -18rem;
+    left: 3rem;
+}
+
+.aboutPlanner {
+    width: 35rem;
+    font-family: 'Merriweather', serif;
+    padding-left: 5rem;
+}
+
+.aboutPlanner h1 {
+    font-size: 3rem;
+    color: rgb(77, 35, 30)
+}
+
+.aboutPlanner p {
+    font-size: 1rem;
+    color: rgb(76, 69, 69)
+}
+
+
+
+
+.venu {
+    margin: 3.7rem;
+    height: 35rem;
+    display: flex;
+}
+
+.venu img {
+    height: 20rem;
+    width: 23rem;
+    padding: 2rem;
+    border-top-right-radius: 13rem;
+    border-top-left-radius: 13rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+}
+
+.venu h1 {
+    font-size: 2rem;
+    font-family: 'Merriweather', serif;
+    color: #4b3737;
+    text-align: center;
+    margin: 0.3rem;
+}
+
+.venu button {
+    margin-left: 8rem;
+    font-size: 1.3rem;
+    font-family: 'Merriweather', serif;
+    color: #8b4242;
+    text-align: center;
+    border-radius: 3rem;
+}
+
+
+
+.venu a {
+    text-decoration: none;
+}
+
+.venu img:hover {
+    border: .3rem solid rgb(255, 255, 255);
+
+
+}
+
+
+
+
+
+.order {
+    height: 45rem;
+    background-image: url('./image1/wedbg1.avif');
+    background-size: cover;
+    display: flex;
+
+}
+
+.order img {
+    height: 33rem;
+    margin: 6rem;
+    border: .6rem solid rgb(255, 255, 255);
+    border-top-left-radius: 15rem;
+    border-bottom-right-radius: 5rem;
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+
+}
+
+
+
+form {
+    margin: 8rem;
+
+}
+
+form input,
+textarea,
+.btn {
+    height: 3rem;
+    width: 35rem;
+    border-radius: 3rem;
+    margin: .5rem;
+    padding-left: 1rem;
+    border-color: rgb(68, 61, 44);
+}
+
+
+
+
+
+
+.hide {
+    display: none;
+}
+
+@media screen and (max-width:575px) {
+    .venu {
+        flex-direction: column;
+        text-align: center;
+        height: 90rem;
+
+    }
+
+    .venu button {
+        margin-left: 0rem;
+    }
+
+    .order {
+        flex-direction: column;
+
+    }
+
+    form {
+        margin: 0rem;
+
+    }
+
+    form input,
+    textarea,
+    .btn {
+        width: 25rem;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 0rem;
+        height: 65rem;
+        padding: 0;
+    }
+
+    .aboutPlanner {
+        margin: 1rem;
+        padding-left: 0.3rem;
+    }
+
+    .about .imgg {
+        position: initial;
+        display: flex;
+        flex-direction: column;
+        padding-left: 8rem;
+
+    }
+
+}
+
+@media screen and (min-width:576) and (max-width:890px) {
+    .venu {
+        flex-direction: column;
+        text-align: center;
+        height: 90rem;
+
+    }
+
+    .venu button {
+        margin-left: 0rem;
+    }
+
+    .order {
+        flex-direction: column;
+
+    }
+
+    form {
+        margin: 0rem;
+
+    }
+
+    form input,
+    textarea,
+    .btn {
+        width: 25rem;
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 0rem;
+        height: 65rem;
+        padding: 0;
+    }
+
+    .aboutPlanner {
+        margin: 1rem;
+        text-align: center;
+    }
+
+    /* .about .imgg{        
+        position:initial;
+        display: flex;
+        flex-direction: column;
+
+    }
+    .about .imgg{
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    } */
+}

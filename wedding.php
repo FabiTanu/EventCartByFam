@@ -1,32 +1,24 @@
-<?php
-include '../../admin-panel/config/dbconn.php';
-
-$insert = "select * from gallery";
-$result = mysqli_query($connection, $insert);
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-    <link rel="stylesheet" href="../../css/card.css">
-    <link rel="stylesheet" href="../../css/gallery.css">
-    <!-- <link rel="stylesheet" href="css/style2.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700;900&family=Poppins:wght@100;200;300&display=swap"
+        rel="stylesheet">
+
+    <title>Wedding</title>
+
+    <link rel="stylesheet" href="wed.css">
+    <link rel="stylesheet" href="wednav.css">
 </head>
 
 <body>
+
     <!--navbar-->
 
     <nav>
@@ -87,40 +79,65 @@ $result = mysqli_query($connection, $insert);
             </div>
         </div>
     </nav>
-    <br> <br><br> <br> <br> <br>
 
-    <!-- body -->
-    <main>
-        <div class="container">
-            <div class="row">
-
-                <?php while ($row = mysqli_fetch_assoc($result)) {
-                    echo "
-
-                    <div class='col-sm-4 '>
-                        <div class='card'>
-                            <div class='image'>
-                            <img src='../../admin-panel/$row[image]' height='250' width='150' alt='image'>
-                            </div>
-                            <div class='card-inner font-monospace'>
-                                <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
-                                </div>
-                                <div class='content'>
-                                    <p>$row[category]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                } ?>
-
-
+    <article>
+        <section class="fline">
+            <div class="intro">
+                <h1>Wedding Planer</h1>
+                <h3>Planners & Event Organizers!</h3>
             </div>
-        </div>
-    </main>
-    <br> <br><br>
+
+        </section>
+        <section class="about">
+            <div class="imggg">
+                <div class="imgg fimg"><img src="./image1/wed1.jpeg" alt=""></div>
+                <div class="imgg simg"><img src="./image1/wed2..jpeg" alt=""></div>
+                <div class="imgg timg"><img src="./image1/wed4.avif" alt=""></div>
+            </div>
+            <div class="aboutPlanner">
+                <h1>WEDDING
+                    PLANNERS</h1>
+                <p>Our wedding planner is dedicated to making your special day extraordinary. With meticulous attention
+                    to detail, they handle everything from venue selection to vendor coordination, ensuring a seamless
+                    and unforgettable celebration. With creativity and expertise, our wedding planner transforms your
+                    vision into reality, allowing you to relax and cherish every moment of your joyous occasion.</p>
+            </div>
+        </section>
+        <section class="venu">
+            <div class="vimg vfimg">
+                <img src="image1/GrandSylhet.jpg" alt="">
+                <div>
+                    <h1>Grand Sylhet</h1>
+                    <a href="https://grandsylhet.com/"><button>More Info</button></a>
+                    <!-- <a href="https://grandsylhet.com/"><button class="btn">More Info</button></a> -->
+                </div>
+            </div>
+            <div class="vimg vsimg">
+                <img src="./image1/khans.jpg" alt="">
+                <h1>Khan's Palace</h1>
+                <a href="https://kpchbd.com/"><button>More Info</button></a>
+            </div>
+            <div class="vimg vtimg">
+                <img src="./image1/kushiara.jpg" alt="">
+                <h1>Kushiara</h1>
+                <a href="https://www.facebook.com/kushiara.ich/"><button>More Info</button></a>
+            </div>
+        </section>
+        <section class="order">
+            <div>
+                <img src="./image1/table..jpeg" alt="">
+            </div>
+            <div>
+                <form action="">
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <input type="number" placeholder="Your Number">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Address"></textarea>
+                    <button class="btn">Order</button>
+                </form>
+            </div>
+        </section>
+    </article>
 
 
     <!--  #FOOTER-->
@@ -261,7 +278,6 @@ $result = mysqli_query($connection, $insert);
 
     <!-- Make sure to include Bootstrap JS at the end of the body -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>
