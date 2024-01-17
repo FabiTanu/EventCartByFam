@@ -8,28 +8,37 @@
                 <i class='bx bx-x'></i>
             </div>
             <ul class="links" id="linkscall">
-                <li><a href="HomePage.php">HOME</a></li>
+                <li><a href="HomePage.php">Home</a></li>
                 <li>
                     <a href="#">About</a>
                     <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
                     <ul class="htmlCss-sub-menu sub-menu">
                         <li><a href="about.php">About Us</a></li>
-                        <li><a href="OurTeam.php">Preferred Partners</a></li>
+                        <li><a href="package/section/partners.php">Preferred Partners</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">Services</a>
                     <i class='bx bxs-chevron-down js-arrow arrow '></i>
                     <ul class="js-sub-menu sub-menu">
-                        <li><a href="wedding.php">Weeding</a></li>
-                        <li><a href="#">Corporate Events</a></li>
-                        <li><a href="birthday.php">Birthday</a></li>
+                        <li><a href="package/wedding.php">Wedding</a></li>
+                        <li><a href="package/corporate.php">Corporate Events</a></li>
+                        <li><a href="package/birthday.php">Birthday</a></li>
                         <li><a href="#">Social Activities</a></li>
                     </ul>
                 </li>
-                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="package/section/gallery.php">Gallery</a></li>
                 <li><a href="review.php">Review</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                <li>
+                    <a href="#">Profile</a>
+                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    <ul class="js-sub-menu sub-menu">
+                        <li><a href="admin-panel/index.php">Admin</a></li>
+                        <li><a href="#">Logout</a></li>
+                        <li><a href="birthday.php">Setting</a></li>
+                        <li><a href="package/section/about.php">About Us</a></li>
+                    </ul>
+                </li>
 
             </ul>
         </div>
