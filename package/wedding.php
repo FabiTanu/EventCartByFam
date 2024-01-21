@@ -1,439 +1,300 @@
+<?php
+include '..\connection\config.php'; 
+
+
+$query = "SELECT * FROM wedding_service";
+$result = mysqli_query($connection, $query);
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-  <link rel="stylesheet" href="../css/wedding.css">
-  <link rel="stylesheet" href="../css/style3.css">
+    <link rel="stylesheet" href="../css/service.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="../css/wed.css">
+    
 </head>
 
 <body>
-  <!--navbar-->
-  <?php include '../connection/nav.php'; ?>
 
 
+    <nav>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="logo"><a href="#">EventCart</a></div>
+            <div class="nav-links">
+                <div class="sidebar-logo">
+                    <span class="logo-name">EventCart</span>
+                    <i class='bx bx-x'></i>
+                </div>
+                <ul class="links" id="linkscall">
+                    <li><a href="HomePage.php">HOME</a></li>
+                    <li>
+                        <a href="#">About</a>
+                        <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                        <ul class="htmlCss-sub-menu sub-menu">
+                            <li><a href="about.php">About Us</a></li>
+                            <li><a href="OurTeam.php">Preferred Partners</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                        <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                        <ul class="js-sub-menu sub-menu">
+                            <li><a href="wedding.php">Weeding</a></li>
+                            <li><a href="#">Corporate Events</a></li>
+                            <li><a href="birthday.php">Birthday</a></li>
+                            <li><a href="#">Social Activities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.php">Gallery</a></li>
+                    <li><a href="review.php">Review</a></li>
+                    <li><a href="contact.php">Contact Us</a></li>
 
-
-  <!--main home-->
-
-
-  <div class="main">
-    <div class="container">
-
-      <div class="row">
-
-        <div class="col-lg-8 col-sm-12 ">
-          <div class="men_text">
-            <h1>Where Yours<span>Dreams</span><br>Take Off</h1>
-          </div>
-          <div class="main_text">
-            <p>
-              "Crafting Unforgettable Moments: Where Your Dreams Become Experiences.
-              Welcome to EVENTCART, where events transcend the ordinary. Our passion lies in sculpting
-              moments that transcend the expected, weaving dreams into tangible, awe-inspiring realities.
-              From intimate affairs to grand celebrations, we blend innovation and precision, creating
-              experiences that mesmerize and memories that linger.
-              Experience the extraordinary, crafted exclusively for you."
-            </p>
-            <div class="main_btn">
-              <a href="#Order" class="book_btn">Get a book</a>
-              <i class="fa-solid fa-angle-right"></i>
+                </ul>
             </div>
-          </div>
+
+            <!-- <div class="logout" id="logout">
+                <a href="#">Logout</a>
+            </div> -->
+
+            <div class="search-box">
+                <i class='bx bx-search'></i>
+
+                <div class="input-box">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </div>
         </div>
+    </nav>
 
-        <div class="col-lg-4 col-sm-12 ">
-          <div class="main_image">
-            <img src="../image/birth1.jpg" alt="Event Image">
-          </div>
+
+
+    
+    <section class="fline">
+        <div class="intro">
+             <h1>EventKart</h1>
+             <h3>Wedding Planners & Event Organizers!</h3>
         </div>
-      </div>
-    </div>
+     </section>
+     <section class="about">
+         <div class="imggg">
+             <div class="imgg fimg"><img src="../image/wed1.jpeg" alt=""></div>
+             <div class="imgg simg"><img src="../image/wed2..jpeg" alt=""></div>
+             <div class="imgg timg"><img src="../image/wed4.avif" alt=""></div>
+         </div>
+         <div class="aboutPlanner">
+                 <h1>EventKart-</h1>
+                   <h2 style="color: rgb(77, 35, 30);"> A WEDDING PLANNERS</h2>
+                 <p>Embark on your journey of forever with EventKart – where dreams unfold into cherished memories. From intimate vows to grand celebrations, we specialize in turning your love story into an enchanting event. Trust us to design an extraordinary day that mirrors your unique bond. Your love, our expertise – let's make your wedding a celebration as special as the love you share."</p>
+         </div>
+     </section>
 
-  </div>
 
 
-  <!------packages----->
-  <div class="title">
-    <h1><span>P</span>ackages</h1>
-  </div>
-  <div class="container" id="container">
+       <!------------------------services-------------------->
+<section class="service">
+  <div class="container-fluid custom-container">
     <div class="row">
-      <div class="col-4">
-        <div class="package">
-          <h2>Basic Package</h2>
-          <p>Price: $299.99</p>
-          <button><a href="basic.php" style="color: azure;"> See Details </a></button>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="package">
-          <h2>Premium Package</h2>
-          <p>Price: $599.99</p>
-          <button><a href="premium.php" style="color: azure;"> See Details </a></button>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="package">
-          <h2>Deluxe Package</h2>
-          <p>Price: $999.99</p>
-          <a href="deluxe.php"><button style="color: azure;">See Details</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <!------------------------services-------------------->
-  <section class="service" id="service">
-    <div class="title">
-      <h1><span>S</span>ervice</h1>
-    </div>
-    <div class="services-row">
-      <div class="services-col">
-        <i class="fas fa-book-open"></i>
-        <h2>Invitation</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-camera"></i>
-        <h2>Photography & Video</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-brush"></i>
-        <h2>Beauty & Makeup</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-birthday-cake"></i>
-        <h2>Wedding cake</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-music"></i>
-        <h2>music band</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-utensils"></i>
-        <h2>Catering</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-    </div>
-  </section>
-
-  <!------------------E-invitation------------------>
-  <section class="invite" id="invite">
-    <div class="title">
-      <h1>Card<span>Design</span></h1>
-      <p>Choose the best card Design.</p>
-    </div>
-    <div class="invitation-row">
-      <div class="invitation-box">
-        <img src="../image/birth1.jpg" alt="">
-      </div>
-      <div class="invitation-box">
-        <img src="../image/birth1.jpg" alt="">
-      </div>
-      <div class="invitation-box">
-        <img src="../image/birth1.jpg" alt="">
-      </div>
-      <div class="invitation-box">
-        <img src="../image/birth1.jpg" alt="">
-      </div>
-      <div class="invitation-box">
-        <img src="../image/birth1.jpg" alt="">
-      </div>
-      <div class="invitation-box">
-        <img src="../image/birth1.jpg" alt="">
-      </div>
-    </div>
-  </section>
-
-  <!----------------------------venue Section-------------->
-  <div class="container">
-    <section class="venue" id="venue">
-      <div class="title">
-        <h1><span>V</span>enues</h1>
-      </div>
-      <div class="venue-list">
-        <div class="venue-box">
-          <img src="../img/meatup.jpg" alt="img">
-          <div class="venue-info">
-            <h2>Sylhet</h2>
-            <p>Meatup</p>
-            <a href="https://www.facebook.com/meatuprestaurant"><button class="btn">More Info</button></a>
-          </div>
-        </div>
-        <div class="venue-box">
-          <img src="../img/Cremo.jpg" alt="img">
-          <div class="venue-info">
-            <h2>Sylhet</h2>
-            <p>Cremo Coffee</p>
-            <a href="https://www.facebook.com/CremoCoffee.bd"><button class="btn">More Info</button></a>
-          </div>
-        </div>
-        <div class="venue-box">
-          <img src="../img/bd1.jpg" alt="img">
-          <div class="venue-info">
-            <h2>Sylhet</h2>
-            <p>Sky Dine</p>
-            <a href="https://www.facebook.com/skydinesylhet/"><button class="btn">More Info</button></a>
-          </div>
-        </div>
-        <div class="venue-box">
-          <img src="../img/cclube.jpg" alt="img">
-          <div class="venue-info">
-            <h2>Sylhet</h2>
-            <p>The Coffee Club</p>
-            <a href="https://www.facebook.com/thecoffeeclubbd/"><button class="btn">More Info</button></a>
-          </div>
-        </div>
-        <div class="venue-box">
-          <img src="../img/union.jpg" alt="img">
-          <div class="venue-info">
-            <h2>Sylhet</h2>
-            <p>Unoon</p>
-            <a href="https://www.facebook.com/unoon.eidgah"><button class="btn">More Info</button></a>
-          </div>
-        </div>
-        <div class="venue-box">
-          <img src="../img/bd3.jpg" alt="img">
-          <div class="venue-info">
-            <h2>Sylhet</h2>
-            <p>Platinum Lounge</p>
-            <a href="https://www.facebook.com/PlatinumLoungeSylhet/"><button class="btn">More
-                Info</button></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <!--Review-->
-  <div class="container">
-    <section>
-      <div class="rev-section">
+      <div class="col-lg-12">
+        
         <div class="title">
-          <h1><span>R</span>eviews</h1>
-        </div>
-        <div class="reviews">
-
-          <div class="review">
-            <div class="head-review">
-              <img src="../image/review_2.png" width="250px">
-            </div>
-            <div class="body-review">
-              <div class="name-review">Sam.B</div>
-              <div class="place-review">Germany</div>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half"></i>
-              </div>
-              <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Obcaecati
-                eligendi suscipit illum officia ex eos.</div>
-            </div>
-          </div>
-          <div class="review">
-            <div class="head-review">
-              <img src="../image/review_2.png" width="250px">
-            </div>
-            <div class="body-review">
-              <div class="name-review">Rose.F</div>
-              <div class="place-review">Paris</div>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-              <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Obcaecati
-                eligendi suscipit illum officia ex eos.</div>
-            </div>
-          </div>
-          <div class="review">
-            <div class="head-review">
-              <img src="../image/review_2.png" width="250px">
-            </div>
-            <div class="body-review">
-              <div class="name-review">Harry.H</div>
-              <div class="place-review">New York</div>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half"></i>
-              </div>
-              <div class="desc-review">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Obcaecati
-                eligendi suscipit illum officia ex eos.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!--Booking-->
-  <!-- 
-        - #BLOG
-      -->
-
-  <!--  #FOOTER-->
-  <!-- <section class="footSection container-fluid"> -->
-  <footer class="footer " style="background-color: rgb(236, 68, 90);">
-    <div class="container">
-
-      <div class="section footer-top">
-
-        <div class="footer-brand">
-
-          <a href="#" class="logo">EventCart</a>
-
-          <p class="footer-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non porttitor augue, in
-            convallis risus.
-            Sed efficitur nulla quis luctus pulvinar. Cras nec pulvinar condimentum lacus.
-          </p>
-
-          <ul class="social-list">
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
-              </a>
-            </li>
-
-          </ul>
-
-        </div>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Explore Us</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">About Us</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Collection</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Features</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Blog & News</a>
-          </li>
-
-        </ul>
-
-        <ul class="footer-list">
-
-          <li>
-            <p class="footer-list-title">Support</p>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Account</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Feedback</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Support Center</a>
-          </li>
-
-          <li>
-            <a href="#" class="footer-link">Our Stores</a>
-          </li>
-
-        </ul>
-
-        <div class="footer-list">
-
-          <p class="footer-list-title">Get in Touch</p>
-
-          <p class="footer-text">
-            Question or feedback?
-            We’d love to hear from you
-          </p>
-
-          <a href="#" class="btn">
-            <span class="span">Contact Us</span>
-
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-          </a>
-
-        </div>
-
-      </div>
-
-      <div class="footer-bottom">
-
-        <p class="copyright">
-          Copyright 2022 codewithFAM. All Right Reserved
-        </p>
-
-      </div>
-
+        <!-- <h2 class="h2 text-uppercase text-center mb-4" style="margin-top:15rem">Our<span>Birthday</span>Package</h2> -->
+        <h1 style="color:black;">Our<span>Wedding</span>Package</h1>
+      
     </div>
-  </footer>
-  <!-- </section> -->
+
+        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+          <div class="pricing" data-package-id="<?php echo $row['id']; ?>">
+            <ul class="list-group list-unstyled">
+              <li class="list-group-item text-center text-uppercase"><?php echo $row['service_type']?></li>
+              <li><img src="../admin-panel/<?php echo $row['image']?>" class="img-fluid package-image" alt=""></li>
+              <li class="list-group-item text-center"><b>THIS PACKAGE INCLUDES:</b></li>
+              <?php
+              // Fetch features for the current package
+              $service_type = $row['service_type'];
+              $features_query = "SELECT * FROM features_list WHERE service_type = '$service_type'";
+              $features_result = mysqli_query($connection, $features_query);
+
+              while ($feature = mysqli_fetch_assoc($features_result)) {
+                echo "<li class='list-group-item'>" . $feature['title'] . "</li>";
+              }
+              ?>
+              <li class="list-group-item font-weight-bold">Price: $ <?php echo $row['price']?>
+              </li>
+              <li class="list-group-item font-weight-bold">
+                <a href="wedding_package_details.php?id=<?php echo $row['id']?>" class="btn btn-custom">View Details</a>
+              </li>
+            </ul>
+          </div>
+        <?php endwhile; ?>
+      </div><!-- end of col-lg-12 -->
+    </div><!-- end of row -->
+  </div><!-- end of container-fluid -->
+
+</section>
 
 
-  <!-- 
+     <section class="venu"style="margin-top: 10rem;">   
+           
+             <div class="vimg vfimg">
+                 <img src="../image/GrandSylhet.jpg" alt="">
+                 <div>
+                     <h1>Grand Sylhet</h1>
+                     <a href="https://grandsylhet.com/"><button>More Info</button></a>
+                     <!-- <a href="https://grandsylhet.com/"><button class="btn">More Info</button></a> -->
+                 </div>
+             </div>
+             <div class="vimg vsimg">
+                 <img src="../image/khans.jpg" alt="">
+                 <h1>Khan's Palace</h1>
+                 <a href="https://kpchbd.com/"><button>More Info</button></a>
+             </div>
+             <div class="vimg vtimg">
+                 <img src="../image/kushiara.jpg" alt="">
+                 <h1>Kushiara</h1>
+                     <a href="https://www.facebook.com/kushiara.ich/"><button>More Info</button></a>
+             </div>
+     </section>
+     <section class="order">
+         <div>
+             <img src="../image/table..jpeg" alt="">
+         </div>
+         <div>
+             <form action="">
+                <h1 style="text-align: center; color:rgb(77, 35, 30);">Order</h1>
+                 <input type="text" placeholder="Your Name">
+                 <input type="email" placeholder="Your Email">
+                 <input type="number" placeholder="Your Number">
+                 <textarea name="text" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
+                 <button class="btn">Order</button>
+             </form>
+         </div>
+     </section>
+
+
+   
+
+
+
+
+
+
+
+    <footer class="footer ">
+        <div class="container">
+
+            <div class="section footer-top">
+
+                <div class="footer-brand">
+
+                    <a href="#" style="color:#fff;
+                    font-size: 3rem;">EventKart</a>
+
+                    <p class="footer-text">
+                        Thank you for exploring our wedding packages! We appreciate your interest in making your special day extraordinary with us. Should you have any questions or wish to discuss further details, feel free to reach out. We look forward to the possibility of being part of your joyous celebration!
+                    </p>
+
+                    
+
+                </div>
+
+                <ul class="footer-list">
+                    <li><p class="footer-list-title">Explore Us</p></li>
+                    <li><a href="#" class="footer-link">About Us</a></li>
+                    <li><a href="#" class="footer-link">Collection</a></li>
+                    <li><a href="#" class="footer-link">Features</a></li>
+                    <li><a href="#" class="footer-link">Blog & News</a></li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li><p class="footer-list-title">Support</p></li>
+                    <li><a href="#" class="footer-link">Account</a></li>
+                    <li><a href="#" class="footer-link">Feedback</a></li>
+                    <li><a href="#" class="footer-link">Support Center</a></li>
+                    <li><a href="#" class="footer-link">Our Stores</a></li>    
+                </ul>
+
+                <div class="footer-list">
+
+                    <p class="footer-list-title">Get in Touch</p>
+
+                    <p class="footer-text">
+                        Question or feedback?
+                        We’d love to hear from you
+                    </p>
+
+                    <button>Contact Us</button>
+
+                </div>
+
+            </div>
+            <hr>
+            <div  class="sociallist">
+                <ul class="social-list">
+
+                        
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                
+                    <a href="#" class="social-link">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                
+
+            </ul>
+            </div>
+            <hr>
+
+            <div class="footer-bottom">
+
+                <p class="copyright">
+                    Creat by FAM
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+
+    <!-- 
     - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
-  <!-- Make sure to include Bootstrap JS at the end of the body -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+    <!-- Make sure to include Bootstrap JS at the end of the body -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

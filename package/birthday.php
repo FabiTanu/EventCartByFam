@@ -1,3 +1,13 @@
+<?php
+include '..\connection\config.php'; 
+
+
+$query = "SELECT * FROM birthday_service";
+$result = mysqli_query($connection, $query);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,6 +24,27 @@
 
   <link rel="stylesheet" href="../css/birth.css">
   <link rel="stylesheet" href="../css/style3.css">
+  <link rel="stylesheet" href="../css/service.css">
+
+  <style>
+  .package-image {
+    width: 100%; /* Ensure images are responsive */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+  }
+
+  .pricing1 {
+    width: 18%;
+    min-height: 200px;
+    float: left; 
+    background: gray;
+    margin-left: 12%;
+    margin-top: 5rem;
+    
+  }
+
+</style>
+
 </head>
 
 <body>
@@ -86,8 +117,8 @@
               Experience the extraordinary, crafted exclusively for you."
             </p>
             <div class="main_btn">
-              <a href="#Order" class="book_btn">Get a book</a>
-              <i class="fa-solid fa-angle-right"></i>
+              <a href="#Order" class="book_btn">Get a book<i class="fa-solid fa-angle-right"></i></a>
+            
             </div>
           </div>
         </div>
@@ -104,47 +135,47 @@
 
 
   <!------------------------services-------------------->
-  <section class="service" id="service">
-    <div class="title">
-      <h1><span>S</span>ervice</h1>
+  <div class="container-fluid custom-container">
+    <div class="row">
+      <div class="col-lg-12">
+      <div class="title1">
+        <!-- <h2 class="h2 text-uppercase text-center mb-4" style="margin-top:15rem">Our<span>Birthday</span>Package</h2> -->
+        <h1 style="color:black; margin-top:12rem;">Our<span>Birthday</span>Package</h1>
+      
     </div>
-    <div class="services-row">
-      <div class="services-col">
-        <i class="fas fa-book-open"></i>
-        <h2>Invitation</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-camera"></i>
-        <h2>Photography & Video</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-brush"></i>
-        <h2>Beauty & Makeup</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-birthday-cake"></i>
-        <h2>Birthday cake</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-music"></i>
-        <h2>music band</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-      <div class="services-col">
-        <i class="fas fa-utensils"></i>
-        <h2>Catering</h2>
-        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
-      </div>
-    </div>
-  </section>
+      
+
+        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+          <div class="pricing1" data-package-id="<?php echo $row['id']; ?>">
+            <ul class="list-group list-unstyled">
+              <li class="list-group-item text-center text-uppercase"><?php echo $row['service_type']?></li>
+              <li><img src="../admin-panel/<?php echo $row['image']?>" class="img-fluid package-image" alt=""></li>
+              <li class="list-group-item text-center"><b>THIS PACKAGE INCLUDES:</b></li>
+              <?php
+              // Fetch features for the current package
+              $service_type = $row['service_type'];
+              $features_query = "SELECT * FROM features_list WHERE service_type = '$service_type'";
+              $features_result = mysqli_query($connection, $features_query);
+
+              while ($feature = mysqli_fetch_assoc($features_result)) {
+                echo "<li class='list-group-item'>" . $feature['title'] . "</li>";
+              }
+              ?>
+              <li class="list-group-item font-weight-bold">Price: $ <?php echo $row['price']?>
+              </li>
+              <li class="list-group-item font-weight-bold">
+                <a href="birthday_package_details.php?id=<?php echo $row['id']?>" class="btn abtn-custom">View Details</a>
+              </li>
+            </ul>
+          </div>
+        <?php endwhile; ?>
+      </div><!-- end of col-lg-12 -->
+    </div><!-- end of row -->
+  </div><!-- end of container-fluid -->
 
   <!------------------E-invitation------------------>
   <section class="invite" id="invite">
-    <div class="title">
+    <div class="title1">
       <h1>Card<span>Design</span></h1>
       <p>Choose the best card Design.</p>
     </div>
@@ -173,7 +204,7 @@
   <!----------------------------venue Section-------------->
   <div class="container">
     <section class="venue" id="venue">
-      <div class="title">
+      <div class="title1">
         <h1><span>V</span>enues</h1>
       </div>
       <div class="venue-list">
@@ -235,7 +266,7 @@
   <div class="container">
     <section>
       <div class="rev-section">
-        <div class="title">
+        <div class="title1">
           <h1><span>R</span>eviews</h1>
         </div>
         <div class="reviews">
