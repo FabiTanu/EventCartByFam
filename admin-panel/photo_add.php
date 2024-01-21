@@ -18,18 +18,10 @@ if (isset($_POST['submit'])) {
 
 
     //insert product
-    $sql = "INSERT INTO `gallery`(`name`, `title`, `image`, `category`) 
-    VALUES ('$photo_name','$photo_title','$img_des','$photo_category')";
+    mysqli_query($connection, "INSERT INTO `gallery`(`name`, `title`, `image`, `category`) 
+    VALUES ('$photo_name','$photo_title','$img_des','$photo_category')");
 
-    // mysqli_query($connection, $sql);
-
-    // header("location:photo_gallery.php");
-
-    if (mysqli_query($connection, $sql)) {
-        header("location:photo_gallery.php");
-    } else {
-        echo "<p style='color:red;text-align:center;margin: 10px 0;'>Can't Insert User.</p>";
-    }
+    header("location:photo_gallery.php");
 }
 
 ?>
@@ -56,7 +48,7 @@ if (isset($_POST['submit'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto border border-primary mt-3">
-                <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
+                <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <p class="text-center fw-bold fs-3 text-warning">Gallery Photo Add:</p>
                     </div>
@@ -76,10 +68,10 @@ if (isset($_POST['submit'])) {
                     <div class="mb-3">
                         <label class="form-label">Select Photo Category</label>
                         <select class="form-select" name="Pages">
-                            <option value="0">Wedding</option>
-                            <option value="1">Birthday</option>
-                            <option value="2">Corporate</option>
-                            <option value="3">Others</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Corporate">Corporate</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>
                     <button name="submit" class="bg-danger fs-4 fw-bold my-3 form-control text-white">Upload</button>
@@ -89,7 +81,45 @@ if (isset($_POST['submit'])) {
     </div>
 
     <!-- fetch data -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-md-6 m-auto">
+                <table class="table table-hover border border-warning my-5">
+                    <thead class="bg-dark text-white fs-5 font-monospace text-center">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <?php
+                        include 'config.php';
+                        $Record = mysqli_query($con, "SELECT * FROM `tblproduct`");
 
+                        while ($row = mysqli_fetch_array($Record)) {
+                            echo "
+            
+                <tr>
+                    <td>$row[Id]</td>
+                    <td>$row[PName]</td>
+                    <td>$row[PPrice]</td>
+                    <td><img src='$row[Pimage]' height='90px' width='150px'</td>
+                    <td>$row[PCategory]</td>
+                    <td><a href=''class='btn btn-danger'>Home</a></td>
+                </tr>
+            ";
+                        }
+                        ?>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div> -->
 
 
     <!-- bootstraop js -->

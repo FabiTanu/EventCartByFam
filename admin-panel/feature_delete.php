@@ -2,27 +2,15 @@
 
 include 'config/dbconn.php';
 
-$id = $_GET['id'];
+$feature_id = $_GET['feature_id'];
 
-$query = "DELETE from review WHERE id = '$id'";
+$query = "DELETE from features_list WHERE feature_id = '$feature_id'";
 $result = mysqli_query($connection, $query);
 
 if ($result) {
     echo "Data Deleted Successfully";
-    header("Location:blogs_events.php");
+    header("Location:services.php");
 } else {
     echo "Failed";
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
