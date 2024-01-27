@@ -53,6 +53,11 @@ include("includes/topbar.php");
 							  <label for="event_name">Event name</label>
 							  <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Enter your event name">
 							</div>
+							
+							<div class="form-group">
+							  <label for="event_name">Event name</label>
+							  <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Enter your event name">
+							</div>
 						</div>
 					</div>
 					<div class="row">

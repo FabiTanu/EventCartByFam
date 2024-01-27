@@ -1,13 +1,3 @@
-<?php
-include '..\connection\config.php'; 
-
-
-$query = "SELECT * FROM birthday_service";
-$result = mysqli_query($connection, $query);
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,77 +12,15 @@ $result = mysqli_query($connection, $query);
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 
-  <link rel="stylesheet" href="../css/birth.css">
+  <link rel="stylesheet" href="../css/wedding.css">
   <link rel="stylesheet" href="../css/style3.css">
-  <link rel="stylesheet" href="../css/service.css">
-
-  <style>
-  .package-image {
-    width: 100%; /* Ensure images are responsive */
-    height: 200px; /* Set a fixed height for all images */
-    object-fit: cover; /* Maintain aspect ratio while covering the container */
-  }
-
-  .pricing1 {
-    width: 18%;
-    min-height: 200px;
-    float: left; 
-    background: gray;
-    margin-left: 12%;
-    margin-top: 5rem;
-    
-  }
-
-</style>
-
 </head>
 
 <body>
   <!--navbar-->
-  <nav>
-    <div class="navbar">
-      <i class='bx bx-menu'></i>
-      <div class="logo"><a href="#">EventCart</a></div>
-      <div class="nav-links">
-        <div class="sidebar-logo">
-          <span class="logo-name">EventCart</span>
-          <i class='bx bx-x'></i>
-        </div>
-        <ul class="links" id="linkscall">
-          <li><a href="HomePage.php">HOME</a></li>
-          <li>
-            <a href="#">About</a>
-            <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
-            <ul class="htmlCss-sub-menu sub-menu">
-              <li><a href="about.php">About Us</a></li>
-              <li><a href="OurTeam.php">Preferred Partners</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">Services</a>
-            <i class='bx bxs-chevron-down js-arrow arrow '></i>
-            <ul class="js-sub-menu sub-menu">
-              <li><a href="wedding.php">Weeding</a></li>
-              <li><a href="#">Corporate Events</a></li>
-              <li><a href="birthday.php">Birthday</a></li>
-              <li><a href="#">Social Activities</a></li>
-            </ul>
-          </li>
-          <li><a href="gallery.php">Gallery</a></li>
-          <li><a href="review.php">Review</a></li>
-          <li><a href="contact.php">Contact Us</a></li>
+  <?php include '../connection/nav.php'; ?>
 
-        </ul>
-      </div>
-      <div class="search-box">
-        <i class='bx bx-search'></i>
 
-        <div class="input-box">
-          <input type="text" placeholder="Search...">
-        </div>
-      </div>
-    </div>
-  </nav>
 
 
   <!--main home-->
@@ -117,8 +45,8 @@ $result = mysqli_query($connection, $query);
               Experience the extraordinary, crafted exclusively for you."
             </p>
             <div class="main_btn">
-              <a href="#Order" class="book_btn">Get a book<i class="fa-solid fa-angle-right"></i></a>
-            
+              <a href="#Order" class="book_btn">Get a book</a>
+              <i class="fa-solid fa-angle-right"></i>
             </div>
           </div>
         </div>
@@ -134,48 +62,79 @@ $result = mysqli_query($connection, $query);
   </div>
 
 
-  <!------------------------services-------------------->
-  <div class="container-fluid custom-container">
+  <!------packages----->
+  <div class="title">
+    <h1><span>P</span>ackages</h1>
+  </div>
+  <div class="container" id="container">
     <div class="row">
-      <div class="col-lg-12">
-      <div class="title1">
-        <!-- <h2 class="h2 text-uppercase text-center mb-4" style="margin-top:15rem">Our<span>Birthday</span>Package</h2> -->
-        <h1 style="color:black; margin-top:12rem;">Our<span>Birthday</span>Package</h1>
-      
+      <div class="col-4">
+        <div class="package">
+          <h2>Basic Package</h2>
+          <p>Price: $299.99</p>
+          <button><a href="basic.php" style="color: azure;"> See Details </a></button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="package">
+          <h2>Premium Package</h2>
+          <p>Price: $599.99</p>
+          <button><a href="premium.php" style="color: azure;"> See Details </a></button>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="package">
+          <h2>Deluxe Package</h2>
+          <p>Price: $999.99</p>
+          <a href="deluxe.php"><button style="color: azure;">See Details</button></a>
+        </div>
+      </div>
     </div>
-      
+  </div>
+  </div>
 
-        <?php while ($row = mysqli_fetch_assoc($result)): ?>
-          <div class="pricing1" data-package-id="<?php echo $row['id']; ?>">
-            <ul class="list-group list-unstyled">
-              <li class="list-group-item text-center text-uppercase"><?php echo $row['service_type']?></li>
-              <li><img src="../admin-panel/<?php echo $row['image']?>" class="img-fluid package-image" alt=""></li>
-              <li class="list-group-item text-center"><b>THIS PACKAGE INCLUDES:</b></li>
-              <?php
-              // Fetch features for the current package
-              $service_type = $row['service_type'];
-              $features_query = "SELECT * FROM features_list WHERE service_type = '$service_type'";
-              $features_result = mysqli_query($connection, $features_query);
-
-              while ($feature = mysqli_fetch_assoc($features_result)) {
-                echo "<li class='list-group-item'>" . $feature['title'] . "</li>";
-              }
-              ?>
-              <li class="list-group-item font-weight-bold">Price: $ <?php echo $row['price']?>
-              </li>
-              <li class="list-group-item font-weight-bold">
-                <a href="birthday_package_details.php?id=<?php echo $row['id']?>" class="btn abtn-custom">View Details</a>
-              </li>
-            </ul>
-          </div>
-        <?php endwhile; ?>
-      </div><!-- end of col-lg-12 -->
-    </div><!-- end of row -->
-  </div><!-- end of container-fluid -->
+  <!------------------------services-------------------->
+  <section class="service" id="service">
+    <div class="title">
+      <h1><span>S</span>ervice</h1>
+    </div>
+    <div class="services-row">
+      <div class="services-col">
+        <i class="fas fa-book-open"></i>
+        <h2>Invitation</h2>
+        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
+      </div>
+      <div class="services-col">
+        <i class="fas fa-camera"></i>
+        <h2>Photography & Video</h2>
+        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
+      </div>
+      <div class="services-col">
+        <i class="fas fa-brush"></i>
+        <h2>Beauty & Makeup</h2>
+        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
+      </div>
+      <div class="services-col">
+        <i class="fas fa-birthday-cake"></i>
+        <h2>Wedding cake</h2>
+        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
+      </div>
+      <div class="services-col">
+        <i class="fas fa-music"></i>
+        <h2>music band</h2>
+        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
+      </div>
+      <div class="services-col">
+        <i class="fas fa-utensils"></i>
+        <h2>Catering</h2>
+        <p>Lorem ipsum dolor sit amet, at mei dolore tritani repudiandae.</p>
+      </div>
+    </div>
+  </section>
 
   <!------------------E-invitation------------------>
   <section class="invite" id="invite">
-    <div class="title1">
+    <div class="title">
       <h1>Card<span>Design</span></h1>
       <p>Choose the best card Design.</p>
     </div>
@@ -204,7 +163,7 @@ $result = mysqli_query($connection, $query);
   <!----------------------------venue Section-------------->
   <div class="container">
     <section class="venue" id="venue">
-      <div class="title1">
+      <div class="title">
         <h1><span>V</span>enues</h1>
       </div>
       <div class="venue-list">
@@ -266,7 +225,7 @@ $result = mysqli_query($connection, $query);
   <div class="container">
     <section>
       <div class="rev-section">
-        <div class="title1">
+        <div class="title">
           <h1><span>R</span>eviews</h1>
         </div>
         <div class="reviews">
@@ -340,7 +299,7 @@ $result = mysqli_query($connection, $query);
 
   <!--  #FOOTER-->
   <!-- <section class="footSection container-fluid"> -->
-  <footer class="footer ">
+  <footer class="footer " style="background-color: rgb(236, 68, 90);">
     <div class="container">
 
       <div class="section footer-top">

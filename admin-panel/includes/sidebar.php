@@ -29,7 +29,7 @@
           <a class="nav-link" href="blogs_events.php">
             <span class="icon" data-bs-toggle="tooltip" data-bs-title="Blogs"><i
                 class="fa-brands fa-blogger-b"></i></span>
-            <span class="menu">Blogs & Events</span>
+            <span class="menu">Blogs & Reviews</span>
           </a>
         </li>
 
@@ -66,9 +66,9 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" href="#">
-            <span class="icon" data-bs-toggle="tooltip" data-bs-title="Users"><i class="fas fa-users"></i></span>
-            <span class="menu">User Management</span>
+          <a class="nav-link" href="booking.php">
+            <span class="icon" data-bs-toggle="tooltip" data-bs-title="Users"><i class="fas fa-book"></i></span>
+            <span class="menu">Bookings</span>
           </a>
         </li>
 

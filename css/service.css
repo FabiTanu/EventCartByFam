@@ -1,0 +1,144 @@
+
+.title {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: .2rem;
+}
+
+.title span {
+  color: rgb(77, 35, 30);
+  font-size: 4rem;
+  font-family: mv boli;
+}
+
+.title1 {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: .2rem;
+}
+
+.title1 span {
+  color:#fac031;
+  font-size: 4rem;
+  font-family: mv boli;
+}
+
+
+
+  body {
+    font-family: "Open Sans", "Roboto", sans-serif;
+    line-height: 1.5em;
+    margin-bottom: 0%;
+    width: 100%;
+    margin-top: 4%;
+    overflow-x: hidden;
+    background: #f1f1f1;
+    font-size: 14px;
+  }
+  
+  
+  
+  
+  .text-uppercase{
+    font-weight: bold;
+    font-size: 25px;
+
+  }
+  
+  .form-control {
+    font-size: 14px;
+    outline: none;
+    /*border-radius: 0;*/
+  }
+
+  
+ 
+  .pricing {
+    width: 18%;
+    min-height: 200px;
+    float: left; 
+    background: gray;
+    margin-left: 2%;
+    margin-top: 5rem;
+    
+  }
+
+  .package-image {
+    width: 100%; /* Ensure images are responsive */
+    height: 200px; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+  }
+  
+  .container-fluid.custom-container {
+    width: 90%;
+    padding-top: 5rem;
+    margin-top: 10rem;
+  }
+
+ 
+  /*weeding button*/
+
+  a.btn.btn-custom {
+    background: none;
+    border-radius: 0;
+    font-size: 12px;
+    width: 100%;
+    border: 2px solid rgb(77, 35, 30);
+    background: rgb(77, 35, 30);
+    color: #ffffff;
+    /* font-weight: 700; */
+    text-transform: uppercase;
+  }
+  
+  a.btn.btn-custom:hover {
+    /*background: #c7081b; */
+    color: white;
+  }
+  
+/*birthday button*/
+  a.btn.abtn-custom {
+    background: none;
+    border-radius: 0;
+    font-size: 15px;
+    width: 100%;
+    border: 2px solid #fac031;
+    background: #fac031;
+    color: #ffffff;
+    /* font-weight: 700; */
+    text-transform: uppercase;
+  
+  }
+  
+  a.btn1.abtn-custom:hover {
+    /*background: #c7081b; */
+    color: white;
+  }
+
+  .list-group-item.text-center.text-uppercase {
+    background: white;
+    color: black;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  .list-group-item {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+  
+  
+  img.card-img-top {
+    border-radius: 0;
+  }
+  
+  .font-custom {
+    font-size: 12px;
+    color: #222;
+    font-weight: bold;
+  }
+  
+
+  
