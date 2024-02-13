@@ -100,7 +100,7 @@
       <div class="col-md-4">
         <div class="team-list">
           <div class="team-box">
-            <img src="../img/fabiha.jpg" alt="img">
+            <img src="../img/fab.jpg" alt="img">
             <div class="pic-info">
               <h2>Fabiha Akther Tanisha</h2>
               <p>Event Manager</p>
@@ -118,7 +118,7 @@
       <div class="col-md-4">
         <div class="team-list">
           <div class="team-box">
-            <img src="../img/munni.jpg" alt="img">
+            <img src="../img/munnii.jpg" alt="img">
             <div class="pic-info">
               <h2>Farhana Akther Munni</h2>
               <p>Event Manager</p>
