@@ -172,7 +172,7 @@
             </div>
             <div class="venue-list">
                 <div class="venue-box">
-                    <img src="../img/meatup.jpg" alt="img">
+                    <img src="../image/meatup.jpg" alt="img">
                     <div class="venue-info">
                         <h2>Sylhet</h2>
                         <p>Meatup</p>
@@ -180,7 +180,7 @@
                     </div>
                 </div>
                 <div class="venue-box">
-                    <img src="../img/Cremo.jpg" alt="img">
+                    <img src="../image/Cremo.jpg" alt="img">
                     <div class="venue-info">
                         <h2>Sylhet</h2>
                         <p>Cremo Coffee</p>
@@ -188,7 +188,7 @@
                     </div>
                 </div>
                 <div class="venue-box">
-                    <img src="../img/bd1.jpg" alt="img">
+                    <img src="../image/skydine.jpg" alt="img">
                     <div class="venue-info">
                         <h2>Sylhet</h2>
                         <p>Sky Dine</p>
@@ -196,7 +196,7 @@
                     </div>
                 </div>
                 <div class="venue-box">
-                    <img src="../img/cclube.jpg" alt="img">
+                    <img src="../image/cclube.jpg" alt="img">
                     <div class="venue-info">
                         <h2>Sylhet</h2>
                         <p>The Coffee Club</p>
@@ -204,7 +204,7 @@
                     </div>
                 </div>
                 <div class="venue-box">
-                    <img src="../img/union.jpg" alt="img">
+                    <img src="../image/unoon.jpg" alt="img">
                     <div class="venue-info">
                         <h2>Sylhet</h2>
                         <p>Unoon</p>
@@ -212,7 +212,7 @@
                     </div>
                 </div>
                 <div class="venue-box">
-                    <img src="../img/bd3.jpg" alt="img">
+                    <img src="../image/platinum.jpg" alt="img">
                     <div class="venue-info">
                         <h2>Sylhet</h2>
                         <p>Platinum Lounge</p>
@@ -236,7 +236,7 @@
 
                     <div class="review">
                         <div class="head-review">
-                            <img src="../image/review_2.png" width="250px">
+                            <img src="../image/review_3.png" width="250px">
                         </div>
                         <div class="body-review">
                             <div class="name-review">Sam.B</div>
@@ -255,7 +255,7 @@
                     </div>
                     <div class="review">
                         <div class="head-review">
-                            <img src="../image/review_2.png" width="250px">
+                            <img src="../image/review_3.png" width="250px">
                         </div>
                         <div class="body-review">
                             <div class="name-review">Rose.F</div>
@@ -274,7 +274,7 @@
                     </div>
                     <div class="review">
                         <div class="head-review">
-                            <img src="../image/review_2.png" width="250px">
+                            <img src="../image/review_3.png" width="250px">
                         </div>
                         <div class="body-review">
                             <div class="name-review">Harry.H</div>

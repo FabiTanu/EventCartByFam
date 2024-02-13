@@ -142,7 +142,7 @@
     </section>
     <section class="order">
         <div>
-            <img src="../image/table..jpeg" alt="">
+            <img src="../image/table.jpeg" alt="">
         </div>
         <div>
             <form action="">
