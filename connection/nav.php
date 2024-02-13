@@ -13,8 +13,8 @@
                     <a href="#">About</a>
                     <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
                     <ul class="htmlCss-sub-menu sub-menu">
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="package/section/partners.php">Preferred Partners</a></li>
+                        <li><a href="section/about.php">About Us</a></li>
+                        <li><a href="section/partners.php">Preferred Partners</a></li>
                     </ul>
                 </li>
                 <li>
@@ -27,7 +27,7 @@
                         <li><a href="#">Social Activities</a></li>
                     </ul>
                 </li>
-                <li><a href="package/section/gallery.php">Gallery</a></li>
+                <li><a href="section/gallery.php">Gallery</a></li>
                 <li><a href="review.php">Review</a></li>
                 <li>
                     <a href="#">Profile</a>
@@ -36,18 +36,21 @@
                         <li><a href="admin-panel/index.php">Admin</a></li>
                         <li><a href="#">Logout</a></li>
                         <li><a href="birthday.php">Setting</a></li>
-                        <li><a href="package/section/about.php">About Us</a></li>
+                        <li><a href="section/about.php">About Us</a></li>
                     </ul>
                 </li>
 
             </ul>
         </div>
-        <div class="search-box">
+        <div class="login" id="login">
+            <a href="./user/login.php">Login</a>
+        </div>
+        <!-- <div class="search-box">
             <i class='bx bx-search'></i>
 
             <div class="input-box">
                 <input type="text" placeholder="Search...">
             </div>
-        </div>
+        </div> -->
     </div>
 </nav>

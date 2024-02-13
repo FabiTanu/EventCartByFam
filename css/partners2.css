@@ -1,3 +1,32 @@
+/*main part*/
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.about-container {
+    text-align: left;
+    padding-top: 100px;
+
+}
+
+.about-heading {
+    font-size: 36px;
+    color: #fac031;
+    /* Adjust the color as needed */
+    margin-bottom: 20px;
+    margin-top: 70px;
+    font-family: mv boli;
+}
+
+
+
+
+/* footer  */
+
 /*-----------------------------------*\
   #CUSTOM PROPERTY
 \*-----------------------------------*/
@@ -57,7 +86,7 @@ li {
     list-style: none;
 }
 
-a,
+footer a,
 button,
 ion-icon {
     display: block;
@@ -73,29 +102,68 @@ a {
 }
 
 
-.logo {
-    color: var(--bistre);
-    font-size: var(--fs-3);
-    font-family: var(--ff-rosario);
+/* .logo {
+    color: black;
+    font-size: 3rem !important;
+    font-family: 'Rosario', sans-serif;
+} */
+
+#logocol {
+    color: rgb(14, 13, 13);
+    font-size: 3rem;
+    font-family: 'Rosario', sans-serif;
 }
 
-.btn {
-    background-color: var(--french-bistre);
-    color: var(--white);
+.footer .logo {
+    /* color: rgb(179, 26, 26); */
+    font-size: 3.2rem;
+}
+
+/* .btn {
+    background-color: black;
+    color: white;
     display: flex;
     align-items: center;
     max-width: max-content;
     gap: 12px;
     min-height: 58px;
     padding-inline: 36px;
-    border-radius: var(--btn-radius);
-    transition: var(--transition-1);
+    border-radius: 32px 6px;
+    transition: 0.25s ease;
+    font-size: 1.6rem;
+} */
+
+
+/*Footer*/
+.btn-foot {
+    background-color: rgb(3, 0, 0);
+    color: white;
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    gap: 12px;
+    min-height: 58px;
+    padding-inline: 36px;
+    border-radius: 32px 6px;
+    transition: 0.25s ease;
     font-size: 1.6rem;
 }
 
-.btn:is(:hover, :focus-visible) {
-    background-color: var(--umber);
+.btn-foot:is(:hover, :focus-visible) {
+    background-color: rgb(109, 55, 55);
 }
+
+.footer-link:is(:hover, :focus-visible) {
+    color: black;
+    font-weight: 600;
+}
+
+.social-link:is(:hover, :focus-visible) {
+    color: white;
+    transition: 0.75s ease;
+    /* font-size: 37px; */
+}
+
 
 
 
@@ -109,7 +177,7 @@ a {
 
 .footer {
     background-color: #fac031;
-    color: var(--white);
+    color: white;
     padding-top: 90px;
 }
 
@@ -117,7 +185,7 @@ a {
     display: grid;
     gap: 30px;
     padding-block-end: 50px;
-    border-block-end: 1px solid var(--french-bistre);
+    border-block-end: 1px solid black;
 }
 
 .footer .logo {
@@ -130,14 +198,12 @@ a {
 }
 
 .footer-text {
-    font-size: 1.6rem !important;
+    font-size: 1.2rem !important;
 }
 
 .footer-link {
-    font-size: 1.6rem !important;
+    font-size: 1.2rem !important;
 }
-
-
 
 .social-list {
     display: flex;
@@ -145,15 +211,15 @@ a {
 }
 
 .social-link {
-    color: var(--french-bistre);
-    font-size: 2.8rem;
+    color: black;
+    font-size: 2.3rem;
 }
 
 .footer-list-title {
-    color: var(--french-bistre);
-    font-family: var(--ff-rosario);
+    color: black;
+    font-family: 'Rosario', sans-serif;
     font-size: 1.8rem;
-    font-weight: var(--fw-700);
+    font-weight: 700;
     margin-block-end: 20px;
 }
 
@@ -171,11 +237,10 @@ a {
 }
 
 .copyright {
-    color: var(--french-bistre);
-    font-family: var(--ff-rosario);
-    font-size: var(--fs-5);
+    color: black;
+    font-family: 'Rosario', sans-serif;
+    font-size: 1.3rem;
 }
-
 
 /*-----------------------------------*\
     #MEDIA QUERIES

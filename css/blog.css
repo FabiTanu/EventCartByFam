@@ -11,6 +11,10 @@ ion-icon {
     transition: var(--transition-2);
 }
 
+.grid-list {
+    display: grid;
+    gap: 70px;
+}
 
 
 /*-----------------------------------*\
