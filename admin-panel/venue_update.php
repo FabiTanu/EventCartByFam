@@ -1,19 +1,3 @@
-<?php
-include 'config/dbconn.php';
-
-$id = $_GET['id'];
-
-
-$insert = "SELECT * FROM gallery WHERE id='$id' ";
-$result = mysqli_query($connection, $insert);
-
-$row = mysqli_fetch_assoc($result);
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,32 +14,36 @@ $row = mysqli_fetch_assoc($result);
 
 <body>
 
+    <?php
+    include 'config/dbconn.php';
 
+    $id = $_GET['id'];
+
+
+    $insert = "SELECT * FROM `venue` WHERE id='$id' ";
+    $result = mysqli_query($connection, $insert);
+
+    $row = mysqli_fetch_assoc($result);
+
+
+    ?>
 
     <div class="container">
         <div class="row">
             <div class="col-md-6 m-auto border border-primary mt-3">
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
-                        <p class="text-center fw-bold fs-3 text-warning">Update Photo Details:</p>
+                        <p class="text-center fw-bold fs-3 text-warning">Update Venue Details:</p>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Photo Name:</label>
-                        <input type="text" name="Pname" class="form-control" value="<?php echo $row['name'] ?>"
+                        <label class="form-label">Venue Name:</label>
+                        <input type="text" name="Vname" class="form-control" value="<?php echo $row['venue_name'] ?>"
                             required>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Product Title:</label>
-                        <input type="text" name="Ptitle" class="form-control" value="<?php echo $row['title'] ?>"
+                        <label class="form-label">Venue Place:</label>
+                        <input type="text" name="Vplace" class="form-control" value="<?php echo $row['place'] ?>"
                             required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Image Preview:</label>
-                        <img src="<?php echo $row['image']; ?>" height="100"><br>
-                    </div>
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Add Image:</label>
-                        <input class="form-control" name="image" type="file" id="formFile">
                     </div>
 
                     <div class="mb-3">
@@ -101,14 +89,26 @@ $row = mysqli_fetch_assoc($result);
                             ?>
                         </select>
                     </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Image Preview:</label>
+                        <img src="<?php echo $row['image']; ?>" height="100"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Add Image:</label>
+                        <input class="form-control" name="image" type="file" id="formFile">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Venue Location:</label>
+                        <input type="text" name="Vlocation" class="form-control" value="<?php echo $row['location'] ?>"
+                            required>
+                    </div>
 
                     <button name="update" value="update"
                         class="bg-danger fs-4 fw-bold my-3 form-control text-white">Update</button>
+                </form>
             </div>
-
-            </form>
         </div>
-    </div>
     </div>
 
 
@@ -127,28 +127,33 @@ $row = mysqli_fetch_assoc($result);
 
 if (isset($_POST['update'])) {
 
-    $photo_name = $_POST['Pname'];
-    $title = $_POST['Ptitle'];
+    $venue_name = $_POST['Vname'];
+    $venue_place = $_POST['Vplace'];
+    $venue_category = $_POST['Pages'];
     $photo_image = $_FILES['image'];
-    $photo_category = $_POST['Pages'];
-
+    // $photo_category = $_POST['Pages'];
+    // echo "<pre>";
+    // print_r($product_image);
+    // echo "</pre>";
     $image_loc = $_FILES['image']['tmp_name'];
     $image_name = $_FILES['image']['name'];
-    $img_des = "Uploadimage/" . $image_name;
-    move_uploaded_file($image_loc, "Uploadimage/" . $image_name);
+    $img_des = "Venueimage/" . $image_name;
+    move_uploaded_file($image_loc, "Venueimage/" . $image_name);
+
+    $venue_location = $_POST['Vlocation'];
 
 
-    $insert = "UPDATE gallery SET `name`=' $photo_name',`title`='$title', `image`='$img_des',`category`='$photo_category' WHERE id=$id";
+    $insert = "UPDATE venue SET `venue_name`='$venue_name',`place`='$venue_place', `category`='$venue_category',`image`='$img_des',`location`='$venue_location' WHERE id=$id";
 
     $query = mysqli_query($connection, $insert);
 
     if (!$query) {
         // echo "<script> alert('not inserted!!')</script>";
-        echo "<script> location.href = 'user_update.php'</script>";
+        echo "<script> location.href = 'venue_update.php'</script>";
 
     } else {
         //  echo "<script> alert('SUCCESSFULLY Updated')</script>";
-        echo "<script> location.href = 'photo_gallery.php'</script>";
+        echo "<script> location.href = 'venue.php'</script>";
 
     }
 }

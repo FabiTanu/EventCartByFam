@@ -42,8 +42,15 @@
     <!--navbar-->
     <?php include "../connection/navuser.php"; ?>
 
-    
-    <br><br>
+    <div class=" bg-danger font-monospace mt-3 p-4 ">
+        <ul class="list-unstyled  d-flex justify-content-center">
+            <li><a href="gal.php" class=" text-decoration-none text-white fs-1 fw-bold px-5 ">Package</a></li>
+            <li><a href="invitation.php" class=" text-decoration-none text-white fs-1 fw-bold px-5">Invitation Card</a>
+            </li>
+            <li><a href="venue_gallery.php" class=" text-decoration-none text-white fs-1 fw-bold px-5">Venue</a></li>
+        </ul>
+    </div>
+
     <!-- body -->
     <?php
     include '../admin-panel/config/dbconn.php';
@@ -79,27 +86,6 @@
                     </div>
                     ";
                     } elseif ($check_page === 'Birthday') {
-                        echo "
-
-                    <div class='col-lg-4 col-sm-6 '>
-                        <div class='card'>
-                            <div class='image'>
-                            <img src='../admin-panel/$row[image]' height='250' width='150' alt='image'>
-                            </div>
-                            <div class='card-inner font-monospace'>
-                                <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
-                                </div>
-                                <div class='content'>
-                                    <p>$row[category]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                    }
-                    elseif ($check_page === 'Corporate') {
                         echo "
 
                     <div class='col-lg-4 col-sm-6 '>

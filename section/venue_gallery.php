@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Package Gallery</title>
+    <title>Venue Gallery</title>
 
     <!-- bootstrap libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -42,13 +42,20 @@
     <!--navbar-->
     <?php include "../connection/navuser.php"; ?>
 
-    
-    <br><br>
+    <!-- <div class="bg-danger font-monospace mt-3 p-4 ">
+        <ul class="list-unstyled  d-flex justify-content-center">
+            <li><a href="gallery.php" class=" text-decoration-none text-white fs-1 fw-bold px-5 ">Package</a></li>
+            <li><a href="invitation.php" class=" text-decoration-none text-white fs-1 fw-bold px-5">Invitation Card</a>
+            </li>
+            <li><a href="venue_gallery.php" class=" text-decoration-none text-white fs-1 fw-bold px-5">Venue</a></li>
+        </ul>
+    </div> -->
+<br><br>
     <!-- body -->
     <?php
     include '../admin-panel/config/dbconn.php';
 
-    $insert = "select * from gallery";
+    $insert = "SELECT * FROM `venue`";
     $result = mysqli_query($connection, $insert);
 
     ?>
@@ -57,9 +64,7 @@
             <div class="row">
 
                 <?php while ($row = mysqli_fetch_assoc($result)) {
-                    $check_page = $row['category'];
-                    if ($check_page === 'Wedding') {
-                        echo "
+                    echo "
 
                     <div class='col-lg-4 col-sm-6 '>
                         <div class='card'>
@@ -68,8 +73,8 @@
                             </div>
                             <div class='card-inner font-monospace'>
                                 <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
+                                    <h2>$row[venue_name]</h2>
+                                    
                                 </div>
                                 <div class='content'>
                                     <p>$row[category]</p>
@@ -78,52 +83,6 @@
                         </div>
                     </div>
                     ";
-                    } elseif ($check_page === 'Birthday') {
-                        echo "
-
-                    <div class='col-lg-4 col-sm-6 '>
-                        <div class='card'>
-                            <div class='image'>
-                            <img src='../admin-panel/$row[image]' height='250' width='150' alt='image'>
-                            </div>
-                            <div class='card-inner font-monospace'>
-                                <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
-                                </div>
-                                <div class='content'>
-                                    <p>$row[category]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                    }
-                    elseif ($check_page === 'Corporate') {
-                        echo "
-
-                    <div class='col-lg-4 col-sm-6 '>
-                        <div class='card'>
-                            <div class='image'>
-                            <img src='../admin-panel/$row[image]' height='250' width='150' alt='image'>
-                            </div>
-                            <div class='card-inner font-monospace'>
-                                <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
-                                </div>
-                                <div class='content'>
-                                    <p>$row[category]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                    }
-                    // else {
-                    //     # code...
-                    //     echo "<p>No data found</p>";
-                    // }
                 } ?>
 
 

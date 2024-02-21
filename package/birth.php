@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>birthday</title>
+
+    <!-- bootstrap libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- extranal css -->
+    <link rel="stylesheet" href="../css/birthday.css">
+    <!-- <link rel="stylesheet" href="../css/service.css"> -->
+
+    <style>
+        :root {
+
+            /**colors*/
+            --homecolor1: #fac031;
+            --homecolor2: #fac031;
+            --homecolor3: #fac031;
+            --white: #fff;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <?php
+    include '..\connection\config.php';
+
+    $query = "SELECT * FROM birthday_service";
+    $result = mysqli_query($connection, $query);
+
+    ?>
+
+    <!--navbar-->
+    <?php include "../connection/navuser.php"; ?>
+
+
+    <!------------------------services-------------------->
+
+
+
+
+
+    <!------------------E-invitation------------------>
+    <!-- <section class="invite" id="invite">
+        <div class="title1">
+            <h1>Card<span>Design</span></h1>
+            <p>Choose the best card Design.</p>
+        </div>
+        <div class="invitation-row">
+            <div class="invitation-box">
+                <img src="../image/birth1.jpg" alt="">
+            </div>
+            <div class="invitation-box">
+                <img src="../image/birth1.jpg" alt="">
+            </div>
+            <div class="invitation-box">
+                <img src="../image/birth1.jpg" alt="">
+            </div>
+            <div class="invitation-box">
+                <img src="../image/birth1.jpg" alt="">
+            </div>
+            <div class="invitation-box">
+                <img src="../image/birth1.jpg" alt="">
+            </div>
+            <div class="invitation-box">
+                <img src="../image/birth1.jpg" alt="">
+            </div>
+        </div>
+    </section> -->
+
+    <!----------------------------venue Section-------------->
+    <div class="container">
+        <section class="venue" id="venue">
+            <div class="title1">
+                <h1><span>V</span>enues</h1>
+            </div>
+            <div class="venue-list">
+                <?php
+                /* Calculate Offset Code */
+                $limit = 6;
+                $birth = "Birthday";
+                $sql = "SELECT `id`, `venue_name`, `place`, `category`, `image`, `location` FROM `venue` WHERE category='Birthday' ORDER BY id DESC LIMIT 4 ";
+
+                $result = mysqli_query($connection, $sql) or die("Query Failed. : Recent Post");
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+
+                        ?>
+
+
+
+                        <div class="venue-box">
+                            <img src="../admin-panel/<?php echo $row['image']; ?>" width="524" height="668" alt="img">
+                            <div class="venue-info">
+                                <h2>
+                                    <?php echo $row['place']; ?>
+                                </h2>
+                                <p>
+                                    <?php echo $row['venue_name']; ?>
+                                </p>
+                                <!-- <a href="https://www.facebook.com/meatuprestaurant"><button class="btn">More Info</button></a> -->
+                                <a href="<?php echo $row['location']; ?>"><button class="btn">More Info</button></a>
+
+                            </div>
+                        </div>
+                    <?php }
+                } ?>
+
+            </div>
+        </section>
+
+    </div>
+
+
+
+
+    <!--  #FOOTER-->
+    <?php include "../connection/footer.php"; ?>
+
+
+
+    <!-- </section> -->
+
+    <!-- javascript  -->
+    <script src="../script.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+    <!-- Make sure to include Bootstrap JS at the end of the body -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+
+</body>
+
+</html>

@@ -14,15 +14,3 @@ if ($result) {
     echo "Failed";
 }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-

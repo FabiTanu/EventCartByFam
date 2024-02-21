@@ -27,7 +27,17 @@
                         <li><a href="#">Social Activities</a></li>
                     </ul>
                 </li>
-                <li><a href="../section/gallery.php">Gallery</a></li>
+                <!-- <li><a href="../section/gallery.php">Gallery</a></li> -->
+                <li>
+                    <a href="#">Gallery</a>
+                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    <ul class="js-sub-menu sub-menu">
+                        <li><a href="../section/gallery.php">Package</a></li>
+                        <li><a href="../section/invitation.php">Invitation</a></li>
+                        <li><a href="../section/venue_gallery.php">Venue</a></li>
+
+                    </ul>
+                </li>
                 <li><a href="review.php">Review</a></li>
                 <li>
                     <a href="#">Profile</a>

@@ -171,6 +171,52 @@
                 <h1><span>V</span>enues</h1>
             </div>
             <div class="venue-list">
+                <?php
+                /* Calculate Offset Code */
+                $limit = 6;
+
+                // $sql1 = "SELECT `id`, `venue_name`, `place`, `image`, `location` FROM `venue`
+                //   ORDER BY id DESC LIMIT {$limit}";
+
+                $sql = "SELECT `id`, `venue_name`, `place`, `category`, `image`, `location` FROM `venue` WHERE category='Birthday' ORDER BY id DESC LIMIT 6 ";
+                $result = mysqli_query($connection, $sql) or die("Query Failed. : Recent Post");
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+
+                        ?>
+
+
+
+                        <div class="venue-box">
+                            <img src="../admin-panel/<?php echo $row['image']; ?>" width="524" height="668" alt="img">
+                            <div class="venue-info">
+                                <h2>
+                                    <?php echo $row['place']; ?>
+                                </h2>
+                                <p>
+                                    <?php echo $row['venue_name']; ?>
+                                </p>
+                                <!-- <a href="https://www.facebook.com/meatuprestaurant"><button class="btn">More Info</button></a> -->
+                                <a href="<?php echo $row['location']; ?>"><button class="btn">More Info</button></a>
+
+                            </div>
+                        </div>
+                    <?php }
+                } ?>
+
+            </div>
+        </section>
+
+    </div>
+
+
+    <!----------------------------venue Section-------------->
+    <!-- <div class="container">
+        <section class="venue" id="venue">
+            <div class="title1">
+                <h1><span>V</span>enues</h1>
+            </div>
+            <div class="venue-list">
                 <div class="venue-box">
                     <img src="../image/meatup.jpg" alt="img">
                     <div class="venue-info">
@@ -223,7 +269,7 @@
             </div>
         </section>
 
-    </div>
+    </div> -->
 
     <!--Review-->
     <div class="container">

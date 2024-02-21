@@ -104,6 +104,57 @@
         </div>
     </div>
 
+    <div class="container about-container">
+        <h2 class="about-heading">Caterars</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <?php
+            $insert = "SELECT * FROM `partners`";
+            $result = mysqli_query($connection, $insert);
+            while ($row = mysqli_fetch_assoc($result)) {
+                if ($row['category'] == "Caterars") {
+                    ?>
+                    <div class="col-md-6  col-lg-3 grid-item">
+
+                        <h2>
+                            <?php echo $row['com_name']; ?>
+                        </h2>
+
+                        <p> <i class="fa-solid fa-user px-2"> : </i>
+                            <?php echo $row['owner_name']; ?>
+                        </p>
+                        <p class="cont"><i class="fa-solid fa-phone px-2 "> : </i><a href="tel:<?php echo $row['phone']; ?>">
+                                <?php echo $row['phone']; ?>
+                            </a>
+                        </p>
+                        <p class="cont"><i class="fa-solid fa-envelope px-2 "></i> : <a
+                                href="mailto:<?php echo $row['email']; ?>">
+                                <?php echo $row['email']; ?>
+                            </a> </p>
+                        <ul class="social-list1">
+
+                            <li>
+                                <a href="<?php echo $row['facebook']; ?>" class="social-link1">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="<?php echo $row['instragram']; ?>" class="social-link1">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <?php
+                }
+            } ?>
+
+        </div>
+    </div>
+
 
     <!-- -----Caterars---- -->
     <div class="container about-container">

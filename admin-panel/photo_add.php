@@ -68,9 +68,11 @@ if (isset($_POST['submit'])) {
                     <div class="mb-3">
                         <label class="form-label">Select Photo Category</label>
                         <select class="form-select" name="Pages">
+                            <option disabled selected>Select Category</option>
                             <option value="Wedding">Wedding</option>
                             <option value="Birthday">Birthday</option>
                             <option value="Corporate">Corporate</option>
+                            <option value="Invitation">Invitation</option>
                             <option value="Others">Others</option>
                         </select>
                     </div>

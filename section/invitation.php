@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Package Gallery</title>
+    <title>birthday</title>
 
     <!-- bootstrap libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -42,7 +42,6 @@
     <!--navbar-->
     <?php include "../connection/navuser.php"; ?>
 
-    
     <br><br>
     <!-- body -->
     <?php
@@ -58,27 +57,7 @@
 
                 <?php while ($row = mysqli_fetch_assoc($result)) {
                     $check_page = $row['category'];
-                    if ($check_page === 'Wedding') {
-                        echo "
-
-                    <div class='col-lg-4 col-sm-6 '>
-                        <div class='card'>
-                            <div class='image'>
-                            <img src='../admin-panel/$row[image]' height='250' width='150' alt='image'>
-                            </div>
-                            <div class='card-inner font-monospace'>
-                                <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
-                                </div>
-                                <div class='content'>
-                                    <p>$row[category]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                    } elseif ($check_page === 'Birthday') {
+                    if ($check_page === 'Invitation') {
                         echo "
 
                     <div class='col-lg-4 col-sm-6 '>
@@ -99,31 +78,6 @@
                     </div>
                     ";
                     }
-                    elseif ($check_page === 'Corporate') {
-                        echo "
-
-                    <div class='col-lg-4 col-sm-6 '>
-                        <div class='card'>
-                            <div class='image'>
-                            <img src='../admin-panel/$row[image]' height='250' width='150' alt='image'>
-                            </div>
-                            <div class='card-inner font-monospace'>
-                                <div class='header'>
-                                    <h2>$row[name]</h2>
-                                    <h3>$row[title]</h2>
-                                </div>
-                                <div class='content'>
-                                    <p>$row[category]</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    ";
-                    }
-                    // else {
-                    //     # code...
-                    //     echo "<p>No data found</p>";
-                    // }
                 } ?>
 
 

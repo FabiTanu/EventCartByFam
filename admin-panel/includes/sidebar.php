@@ -56,9 +56,16 @@
         </li>
 
         <li class="nav-item ">
-          <a class="nav-link" href="#">
-            <span class="icon" data-bs-toggle="tooltip" data-bs-title="Photo"><i class="fa-regular fa-image"></i></span>
-            <span class="menu">Photo Upload</span>
+          <a class="nav-link" href="venue.php">
+            <span class="icon" data-bs-toggle="tooltip" data-bs-title="Venue"><i class="fa-regular fa-image"></i></span>
+            <span class="menu">Venue</span>
+          </a>
+        </li>
+
+        <li class="nav-item ">
+          <a class="nav-link" href="partner.php">
+            <span class="icon" data-bs-toggle="tooltip" data-bs-title="partner"><i class="fa-regular fa-image"></i></span>
+            <span class="menu">partners</span>
           </a>
         </li>
 
@@ -75,7 +82,7 @@
 
         <li class="nav-item">
           <a class="nav-link" href="task_calendar.php">
-            <span class="icon" data-bs-toggle="tooltip" data-bs-title="Logout"><i
+            <span class="icon" data-bs-toggle="tooltip" data-bs-title="calender"><i
                 class="fa-solid fa-list-check"></i></span>
             <span class="menu">Task Calendar</span>
           </a>
